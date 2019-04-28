@@ -51,7 +51,12 @@ app.get('/posts/new',(req,res)=>{
 })
 
 app.post('/posts/store',(req,res)=>{ 
+    Post.create(res.body,(error,post)=>{
+        res.redirect('/')
+    })
+    res.redirect('/')
     console.log(req.body)
+    
 })
 
 app.listen(1337,()=>{
